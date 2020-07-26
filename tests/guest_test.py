@@ -1,5 +1,7 @@
 import unittest
 from classes.guest import Guest
+from classes.room import Room
+from classes.song import Song
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
@@ -35,7 +37,7 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(round(self.guest_04.wallet, 2), 13.00)
 
     def test_guest_can_pay_entry(self):
-        self.guest_03.pay_entry(room_01)
+        self.guest_03.pay_entry(self.room_01)
         self.assertEqual(round(self.guest_03.wallet, 2), 18.60)
         self.assertEqual(round(self.room_01.bill, 2), 5.00)
 
