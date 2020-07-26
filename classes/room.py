@@ -1,6 +1,7 @@
 class Room:
-    def __init__(self, name):
+    def __init__(self, name, limit):
         self.name = name
+        self.limit = limit
         self.guests = []
         self.songs = []
 
