@@ -8,10 +8,10 @@ class TestGuest(unittest.TestCase):
         self.room_01 = Room("The Party Room", 4, 5.00)
         self.room_02 = Room("The Date Room", 2, 10.00)
 
-        self.guest_01 = Guest("Frodo Baggins", 51, 30.50)
-        self.guest_02 = Guest("Samwise Gamgee", 36, 10.75)
-        self.guest_03 = Guest("Meriadoc Brandybuck", 37, 23.60)
-        self.guest_04 = Guest("Peregrin Took", 29, 17.85)
+        self.guest_01 = Guest("Frodo Baggins", 51, 30.50, self.song_04)
+        self.guest_02 = Guest("Samwise Gamgee", 36, 10.75, self.song_03)
+        self.guest_03 = Guest("Meriadoc Brandybuck", 37, 23.60, self.song_01)
+        self.guest_04 = Guest("Peregrin Took", 29, 17.85, self.song_05)
 
         self.song_01 = Song("Come on Eileen", "Dexys Midnight Runners")
         self.song_02 = Song("Mr Blue Sky", "ELO")
@@ -41,4 +41,6 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(round(self.guest_03.wallet, 2), 18.60)
         self.assertEqual(round(self.room_01.bill, 2), 5.00)
 
-
+    def test_guest_has_favourite_song(self):
+        fav_song = self.guest_01.fav_song
+        self.assertEqual(self.song_04, fav_song)
