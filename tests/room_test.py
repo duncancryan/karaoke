@@ -32,6 +32,12 @@ class TestRoom(unittest.TestCase):
         songs = len(self.room_01.songs)
         self.assertEqual(0, songs)
     
-    def test_room_can_check_in_customer(self):
+    def test_room_can_check_out_customer(self):
         self.room_02.check_in_guest(self.guest_02)
         self.assertEqual(1, len(self.room_02.guests))
+
+    def test_room_can_check_out_guest(self):
+        self.room_02.check_in_guest(self.guest_02)
+        self.room_02.check_out_guest(self.guest_02)
+        self.assertEqual(0, len(self.room_02.guests))
+
