@@ -4,6 +4,7 @@ class Room:
         self.limit = limit
         self.guests = []
         self.songs = []
+        self.bill = 0.00
 
     def check_in_guest(self, guest):
         if len(self.guests) < self.limit:
