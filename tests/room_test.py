@@ -70,6 +70,6 @@ class TestRoom(unittest.TestCase):
 
     def test_bill_can_increase(self):
         self.room_01.increase_bill(3.75)
-        self.assertEqual(round(self.bill, 2), 3.75)
+        self.assertEqual(round(self.room_01.bill, 2), 3.75)
 
 

@@ -19,3 +19,6 @@ class Room:
 
     def add_song(self, song):
         self.songs.append(song)
+
+    def increase_bill(self, amount):
+        self.bill += amount
