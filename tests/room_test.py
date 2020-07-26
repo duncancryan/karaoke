@@ -55,4 +55,10 @@ class TestRoom(unittest.TestCase):
         self.room_02.add_song(self.song_02)
         self.assertEqual(1, len(self.room_02.songs))
 
+    def test_full_room_will_not_take_guest(self):
+        self.room_02.check_in_guest(self.guest_03)
+        self.room_02.check_in_guest(self.guest_04)
+        self.room_02.check_in_guest(self.guest_02)
+        self.assertEqual(2, len(self.room_02.guests))
+
 
