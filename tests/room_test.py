@@ -31,6 +31,10 @@ class TestRoom(unittest.TestCase):
     def test_room_songs_start_at_0(self):
         songs = len(self.room_01.songs)
         self.assertEqual(0, songs)
+
+    def test_room_has_guest_limit(self):
+        limit = self.room_02.limit
+        self.assertEqual(2, limit)
     
     def test_room_can_check_out_customer(self):
         self.room_02.check_in_guest(self.guest_02)
