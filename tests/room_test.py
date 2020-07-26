@@ -42,6 +42,10 @@ class TestRoom(unittest.TestCase):
     def test_room_can_check_out_customer(self):
         self.room_02.check_in_guest(self.guest_02)
         self.assertEqual(1, len(self.room_02.guests))
+    
+    def test_room_has_entry_fee(self):
+        fee = self.room_01.fee
+        self.assertEqual(5, fee)
 
     def test_room_can_check_out_guest(self):
         self.room_02.check_in_guest(self.guest_02)
