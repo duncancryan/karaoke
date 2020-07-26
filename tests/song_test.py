@@ -8,7 +8,7 @@ class TestSong(unittest.TestCase):
         self.song_03 = Song("Bat out of Hell", "Meatloaf")
         self.song_04 = Song("You're so Vain", "Carly Simon")
         self.song_05 = Song("Tubthumping", "Chumbawamba")
-        self.song_06 = Song("Accidentally in Love, Counting Crows")
+        self.song_06 = Song("Accidentally in Love", "Counting Crows")
 
     def test_song_has_name(self):
         name = self.song_01.name
