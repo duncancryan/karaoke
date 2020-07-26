@@ -10,4 +10,5 @@ class Room:
     def check_out_guest(self, guest):
         self.guests.remove(guest)
 
-        
+    def empty_room(self):
+        self.guests.clear()
