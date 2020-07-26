@@ -35,6 +35,9 @@ class TestRoom(unittest.TestCase):
     def test_room_has_guest_limit(self):
         limit = self.room_02.limit
         self.assertEqual(2, limit)
+
+    def test_room_bill_starts_at_0(self):
+        self.assertEqual(0.00, self.room_01.bill)
     
     def test_room_can_check_out_customer(self):
         self.room_02.check_in_guest(self.guest_02)
