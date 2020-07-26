@@ -4,3 +4,5 @@ class Guest:
         self.age = age
         self.wallet = wallet
 
+    def decrease_wallet(self, amount):
+        self.wallet -= amount
