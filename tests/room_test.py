@@ -5,8 +5,8 @@ from classes.song import Song
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
-        self.room_01 = Room("The Party Room", 4, 5)
-        self.room_02 = Room("The Date Room", 2, 10)
+        self.room_01 = Room("The Party Room", 4, 5.00)
+        self.room_02 = Room("The Date Room", 2, 10.00)
         
         self.guest_01 = Guest("Frodo Baggins", 51, 30.50)
         self.guest_02 = Guest("Samwise Gamgee", 36, 10.75)
@@ -67,5 +67,9 @@ class TestRoom(unittest.TestCase):
         self.room_02.check_in_guest(self.guest_04)
         self.room_02.check_in_guest(self.guest_02)
         self.assertEqual(2, len(self.room_02.guests))
+
+    def test_bill_can_increase(self):
+        self.room_01.increase_bill(3.75)
+        self.assertEqual(round(self.bill, 2), 3.75)
 
 
