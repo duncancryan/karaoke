@@ -6,3 +6,8 @@ class Guest:
 
     def decrease_wallet(self, amount):
         self.wallet -= amount
+
+    def pay_entry(self, room):
+        self.decrease_wallet(room.fee)
+        room.increase_bill(room.fee)
+        

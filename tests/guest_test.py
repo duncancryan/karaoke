@@ -3,10 +3,20 @@ from classes.guest import Guest
 
 class TestGuest(unittest.TestCase):
     def setUp(self):
+        self.room_01 = Room("The Party Room", 4, 5.00)
+        self.room_02 = Room("The Date Room", 2, 10.00)
+
         self.guest_01 = Guest("Frodo Baggins", 51, 30.50)
         self.guest_02 = Guest("Samwise Gamgee", 36, 10.75)
         self.guest_03 = Guest("Meriadoc Brandybuck", 37, 23.60)
         self.guest_04 = Guest("Peregrin Took", 29, 17.85)
+
+        self.song_01 = Song("Come on Eileen", "Dexys Midnight Runners")
+        self.song_02 = Song("Mr Blue Sky", "ELO")
+        self.song_03 = Song("Bat out of Hell", "Meatloaf")
+        self.song_04 = Song("You're so Vain", "Carly Simon")
+        self.song_05 = Song("Tubthumping", "Chumbawamba")
+        self.song_06 = Song("Accidentally in Love", "Counting Crows")
 
     def test_guest_has_name(self):
         name = self.guest_01.name
@@ -25,5 +35,8 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(round(self.guest_04.wallet, 2), 13.00)
 
     def test_guest_can_pay_entry(self):
-        pass
+        self.guest_03.pay_entry(room_01)
+        self.assertEqual(round(self.guest_03.wallet, 2), 18.60)
+        self.assertEqual(round(self.room_01.bill, 2), 5.00)
+
 
