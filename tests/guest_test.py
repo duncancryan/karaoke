@@ -20,3 +20,10 @@ class TestGuest(unittest.TestCase):
         wallet = round(self.guest_02.wallet, 2)
         self.assertEqual(10.75, wallet)
 
+    def test_wallet_can_decrease(self):
+        self.guest_04.decrease_wallet(4.85)
+        self.assertEqual(round(self.guest_04.wallet, 2), 13.00)
+
+    def test_guest_can_pay_entry(self):
+        pass
+
