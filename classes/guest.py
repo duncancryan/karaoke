@@ -12,4 +12,8 @@ class Guest:
         self.decrease_wallet(room.fee)
         room.increase_bill(room.fee)
 
+    def react_to_song(self, song):
+        if song == self.fav_song:
+            return "Wahey!"
+
     

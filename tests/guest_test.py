@@ -44,3 +44,7 @@ class TestGuest(unittest.TestCase):
     def test_guest_has_favourite_song(self):
         fav_song = self.guest_01.fav_song
         self.assertEqual(self.song_04, fav_song)
+
+    def test_reacts_to_fav_song(self):
+        reaction = self.guest_03.react_to_song()
+        self.assertEqual("Wahey!", reaction)
