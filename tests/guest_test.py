@@ -61,7 +61,12 @@ class TestGuest(unittest.TestCase):
         fav = self.guest_02.fav_drink
         self.assertEqual(self.drink_01, fav)
 
-    def test_guest_can_afford_drink(self):
+    def test_guest_can_afford_drink_false(self):
         self.guest_02.pay_entry(self.room_02)
         result = self.guest_02.can_afford(self.drink_01)
         self.assertEqual(False, result)
+
+    def test_guest_can_afford_drink_true(self):
+        self.guest_01.pay_entry(self.room_02)
+        result = self.guest_01.can_afford(self.drink_01)
+        self.assertEqual(True, result)
