@@ -24,3 +24,7 @@ class Guest:
     #         return "Wahey!"
 
     
+    def can_afford(self, drink):
+        if self.wallet >= drink.price:
+            return True
+        return False
