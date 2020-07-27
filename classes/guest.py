@@ -13,15 +13,15 @@ class Guest:
         self.decrease_wallet(room.fee)
         room.increase_bill(room.fee)
 
-    def react_to_song(self, song):
-        if song == self.fav_song:
-            return "Wahey!"
+    # def react_to_song(self, song):
+    #     if song == self.fav_song:
+    #         return "Wahey!"
 
             # or...?
 
-    # def react_to_song(self, room):
-    #     if self.fav_song in room.songs:
-    #         return "Wahey!"
+    def react_to_song(self, room):
+        if self.fav_song in room.songs:
+            return "Wahey!"
 
     
     def can_afford(self, drink):

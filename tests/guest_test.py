@@ -54,7 +54,8 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(self.song_04, fav_song)
 
     def test_reacts_to_fav_song(self):
-        reaction = self.guest_03.react_to_song(self.song_01)
+        self.room_01.add_song(self.song_01)
+        reaction = self.guest_03.react_to_song(self.room_01)
         self.assertEqual("Wahey!", reaction)
 
     def test_guest_has_favourite_drink(self):
@@ -70,3 +71,6 @@ class TestGuest(unittest.TestCase):
         self.guest_01.pay_entry(self.room_02)
         result = self.guest_01.can_afford(self.drink_01)
         self.assertEqual(True, result)
+
+    def test_guest_can_buy_drink(self):
+        pass
