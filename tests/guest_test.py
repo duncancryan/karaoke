@@ -81,4 +81,8 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(5, self.guest_02.singing_prowess)
         
     def test_customer_can_buy_drink(self):
-        pass
+        self.guest_03.pay_entry(self.room_01)
+        self.guest_03.buy_drink(self.drink_05)
+        self.assertEqual(9.35, round(self.guest_03.wallet, 2))
+        self.assertEqual(14.25, self.room_01)
+        self.assertEqual(3, self.guest_03.singing_prowess)
