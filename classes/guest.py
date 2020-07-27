@@ -5,6 +5,7 @@ class Guest:
         self.wallet = wallet
         self.fav_song = fav_song
         self.fav_drink = fav_drink
+        self.singing_prowess = 0
 
     def decrease_wallet(self, amount):
         self.wallet -= amount

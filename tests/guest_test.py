@@ -73,6 +73,6 @@ class TestGuest(unittest.TestCase):
         self.assertEqual(True, result)
 
     def test_guest_singing_confidence_starts_at_0(self):
-        confidence = self.guest_02.confidence
+        confidence = self.guest_02.singing_prowess
         self.assertEqual(0, confidence)
         
