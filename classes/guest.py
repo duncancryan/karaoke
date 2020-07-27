@@ -32,3 +32,8 @@ class Guest:
 
     def increase_prowess(self, amount):
         self.singing_prowess += amount
+
+    def buy_drink(self, drink, room):
+        self.decrease_wallet(drink.price)
+        room.increase_bill(drink.price)
+        self.increase_prowess(drink.alcohol)
