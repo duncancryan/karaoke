@@ -2,11 +2,19 @@ import unittest
 from classes.room import Room
 from classes.guest import Guest
 from classes.song import Song
+from classes.drink import Drink
 
 class TestRoom(unittest.TestCase):
     def setUp(self):
         self.room_01 = Room("The Party Room", 4, 5.00)
         self.room_02 = Room("The Date Room", 2, 10.00)
+
+        self.drink_01 = Drink("Gaffer's Home Brew", 5, 1.20)
+        self.drink_02 = Drink("Dry Martini", 2, 3.40)
+        self.drink_03 = Drink("Margarita", 2, 3.40)
+        self.drink_04 = Drink("Manhattan", 2, 3.40)
+        self.drink_05 = Drink("Sazerac", 3, 4.25)
+        self.drink_06 = Drink("Highball", 1, 2.60)
         
         self.song_01 = Song("Come on Eileen", "Dexys Midnight Runners")
         self.song_02 = Song("Mr Blue Sky", "ELO")
@@ -15,10 +23,10 @@ class TestRoom(unittest.TestCase):
         self.song_05 = Song("Tubthumping", "Chumbawamba")
         self.song_06 = Song("Accidentally in Love", "Counting Crows")
         
-        self.guest_01 = Guest("Frodo Baggins", 51, 30.50, self.song_04)
-        self.guest_02 = Guest("Samwise Gamgee", 36, 10.75, self.song_03)
-        self.guest_03 = Guest("Meriadoc Brandybuck", 37, 23.60, self.song_01)
-        self.guest_04 = Guest("Peregrin Took", 29, 17.85, self.song_05)
+        self.guest_01 = Guest("Frodo Baggins", 51, 30.50, self.song_04, self.drink_06)
+        self.guest_02 = Guest("Samwise Gamgee", 36, 10.75, self.song_03, self.drink_01)
+        self.guest_03 = Guest("Meriadoc Brandybuck", 37, 23.60, self.song_01, self.drink_05)
+        self.guest_04 = Guest("Peregrin Took", 29, 17.85, self.song_05, self.drink_03)
 
     def test_room_has_name(self):
         name = self.room_01.name
