@@ -16,4 +16,10 @@ class Guest:
         if song == self.fav_song:
             return "Wahey!"
 
+            # or...?
+
+    # def react_to_song(self, room):
+    #     if self.fav_song in room.songs:
+    #         return "Wahey!"
+
     
