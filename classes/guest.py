@@ -29,3 +29,6 @@ class Guest:
         if self.wallet >= drink.price:
             return True
         return False
+
+    def increase_prowess(self, amount):
+        self.singing_prowess += amount
