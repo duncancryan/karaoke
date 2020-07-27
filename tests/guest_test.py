@@ -72,5 +72,7 @@ class TestGuest(unittest.TestCase):
         result = self.guest_01.can_afford(self.drink_01)
         self.assertEqual(True, result)
 
-    def test_guest_can_buy_drink(self):
-        pass
+    def test_guest_singing_confidence_starts_at_0(self):
+        confidence = self.guest_02.confidence
+        self.assertEqual(0, confidence)
+        
